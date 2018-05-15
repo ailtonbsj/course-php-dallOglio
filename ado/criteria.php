@@ -3,16 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Criteria ADO</title>
+	<title>ADO Criteria</title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
 <pre>
 <?php 
 
-include_once 'texpression.class.php';
-include_once 'tcriteria.class.php';
-include_once 'tfilter.class.php';
+include_once 'lib/TExpression.class.php';
+include_once 'lib/TCriteria.class.php';
+include_once 'lib/TFilter.class.php';
 
 $criteria = new TCriteria;
 $criteria->add(new TFilter('idade', '<', 16), TExpression::OR_OPERATOR);

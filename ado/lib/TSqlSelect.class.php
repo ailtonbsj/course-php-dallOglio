@@ -1,6 +1,6 @@
 <?php 
 
-final class TSqlSelect extends TSQLInstruction {
+final class TSqlSelect extends TSqlInstruction {
 	private $columns;
 
 	public function addColumn($column) {

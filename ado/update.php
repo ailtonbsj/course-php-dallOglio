@@ -11,8 +11,8 @@
 <?php 
 
 function __autoload($classe) {
-	if(file_exists(strtolower($classe) . ".class.php")) {
-		include_once strtolower($classe) . ".class.php";
+	if(file_exists("lib/{$classe}.class.php")) {
+		include_once "lib/{$classe}.class.php";
 	}
 }
 

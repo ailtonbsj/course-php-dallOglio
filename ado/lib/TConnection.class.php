@@ -1,0 +1,26 @@
+<?php 
+
+final class TConnection {
+	//private function __construct() {}
+	public static function open($name) {
+		if(file_exists("{$name}.ini")) {
+			$db = parse_ini_file("{$name}.ini");
+		} else {
+			throw new Exception("Arquivo $name não encontrado!");
+		}
+		$user = $db['user'];
+		$pass = $db['pass'];
+		$name = $db['name'];
+		$host = $db['host'];
+		$type = $db['type'];
+		switch ($type) {
+			case 'mysql':
+				$conn = new PDO("mysql:host={$host};port=3307;dbname={$name}", $user, $pass);
+				break;
+		}
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return $conn;
+	}
+}
+
+ ?>

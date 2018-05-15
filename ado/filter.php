@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ADO</title>
+	<title>ADO Filter</title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
 <pre>
 <?php 
 
-include_once 'texpression.class.php';
-include_once 'tfilter.class.php';
+include_once 'lib/TExpression.class.php';
+include_once 'lib/TFilter.class.php';
 
 $filter1 = new TFilter('data', '=', '2007-06-02');
 echo $filter1->dump();
