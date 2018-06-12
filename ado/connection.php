@@ -9,10 +9,10 @@
 </head>
 <body>
 <pre>
-<?php 
+<?php
 
 function __autoload($classe) {
-	if(file_exists("lib/{$classe}.class.php")) {
+	if (file_exists("lib/{$classe}.class.php")) {
 		include_once "lib/{$classe}.class.php";
 	}
 }
@@ -23,9 +23,9 @@ $sql->addColumn('codigo');
 $sql->addColumn('nome');
 
 try {
-	$conn = TConnection::open('my_livro');
+	$conn = TConnection::open('pg_livro');
 	$result = $conn->query($sql->getInstruction());
-	if($result) {
+	if ($result) {
 		$row = $result->fetch(PDO::FETCH_ASSOC);
 		echo $row['codigo'] . ' - ' . $row['nome'];
 	}
@@ -35,7 +35,7 @@ try {
 	die();
 }
 
- ?>
+?>
 </pre>
 </body>
 </html>
